@@ -1,0 +1,10 @@
+RewriteEngine on
+DirectoryIndex site.php
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} ^(.+)/$
+RewriteRule ^(.+)/$ /$1 [R=301,L]
+RewriteRule ^index\.html$ http://krasota-style.com.ua/ [R=301,L]
+RewriteRule ^sitemap.xml sitemap.xml.php [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([^?]*)$ /site.php [NC,L,QSA]
