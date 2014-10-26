@@ -5,20 +5,22 @@ class router extends db{
 		$link = explode('/', $_SERVER['REQUEST_URI']);
 		$lastIndex = (sizeof($link) - 1);
 
-		if(preg_match('/.php/', $link[$lastIndex])){
-			$_SERVER['REQUEST_URI'] = preg_replace('/.php/', '', $_SERVER['REQUEST_URI']);
-			$link[$lastIndex] = preg_replace('/.php/', '', $link[$lastIndex]);
-		}
+		if($link['1'] != ''){
+            if(preg_match('/.php/', $link[$lastIndex])){
+                $_SERVER['REQUEST_URI'] = preg_replace('/.php/', '', $_SERVER['REQUEST_URI']);
+                $link[$lastIndex] = preg_replace('/.php/', '', $link[$lastIndex]);
+            }
 
-		if(!preg_match('/.html/', $link[$lastIndex])){
-			$t = explode('?', $_SERVER['REQUEST_URI']);
+            if(!preg_match('/.html/', $link[$lastIndex])){
+                $t = explode('?', $_SERVER['REQUEST_URI']);
 
-			$location = "Location: http://".$_SERVER['SERVER_NAME'].$t['0'].".html";
-			$location .= $t['1'] != '' ? '?'.$t['1'] : '';
+                $location = "Location: http://".$_SERVER['SERVER_NAME'].$t['0'].".html";
+                $location .= $t['1'] != '' ? '?'.$t['1'] : '';
 
-			header("HTTP/1.1 301 Moved Permanently");
-			header($location);
-		}
+                header("HTTP/1.1 301 Moved Permanently");
+                header($location);
+            }
+        }
 
 		$link[$lastIndex] = preg_replace('/.html/', '', $link[$lastIndex]);
 		$link[$lastIndex] = explode('?', $link[$lastIndex]);

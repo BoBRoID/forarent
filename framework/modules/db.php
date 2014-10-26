@@ -1,13 +1,21 @@
 <?php
 class db extends mysqli{
 
-	function __construct($param1 = '', $param2 = '', $param3 = '', $param4 = ''){
-		$param = array('host' => $param1, 'user' => $param2, 'pass' => $param3, 'database' => $param4);
-		foreach($param as $key => $tParam){
-			$param[$key] = ($tParam == '' ? $GLOBALS[$key] : $tParam);
-		}
+    private $dbSettings = array(
+        'host'      =>  'localhost',
+        'user'      =>  'root',
+        'pass'      =>  '',
+        'database'  =>  'forarent'
+    );
+
+	function __construct(){
+        $param = $this->dbSettings;
 		parent::__construct($param['host'], $param['user'], $param['pass'], $param['database']);
 		parent::set_charset("utf8");
+
+        if($this->connect_errno){
+            die('<meta charset="utf-8">Ошибка: невозможно подключиться к базе данных!');
+        }
 	}
 
 }
