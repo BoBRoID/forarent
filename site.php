@@ -1,11 +1,11 @@
 <?php
-	/* Обьявляем переменные для подключения к БД */
+
+    error_reporting(0);
 
     include 'framework/modules/system.php';
 
     function __autoload($className){
-        $system = new system();
-        $system->autoload($className);
+        system::autoload($className);
     }
 
 	$router = new router();

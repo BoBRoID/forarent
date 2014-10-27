@@ -8,13 +8,22 @@ class db extends mysqli{
         'database'  =>  'forarent'
     );
 
-	function __construct(){
+    function connect(){
         $param = $this->dbSettings;
-		parent::__construct($param['host'], $param['user'], $param['pass'], $param['database']);
-		parent::set_charset("utf8");
+        parent::__construct($param['host'], $param['user'], $param['pass'], $param['database']);
+        parent::set_charset("utf8");
 
         if($this->connect_errno){
-            die('<meta charset="utf-8">Ошибка: невозможно подключиться к базе данных!');
+            throw new Exception('<meta charset="utf-8">Ошибка: невозможно подключиться к базе данных!');
+        }
+    }
+
+	function __construct(){
+        try{
+            $this->connect();
+        }catch(Exception $e){
+            //print_r($e);
+            echo $e->getMessage();
         }
 	}
 
