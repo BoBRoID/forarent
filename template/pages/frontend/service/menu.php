@@ -1,6 +1,6 @@
-<div class="menu-bar" style="width: 60px; height: 100%; display: block; float: left; margin-top: 6px;">
+<div class="menu-bar" style="width: 60px; height: 100%; display: block; float: left;">
     <a href="#" id="trigger" class="menu-trigger" style="margin-left: 8px;"></a>
-</div> <!-- открывает менюшку -->
+</div>
 <nav id="mp-menu" class="mp-menu">
     <div class="mp-level">
         <h2 class="icon icon-world">forarent logo</h2>

@@ -18,3 +18,6 @@
     <body>
         <div class="container">
             <div class="mp-pusher" id="mp-pusher">
+            <?php include 'template/pages/frontend/service/menu.php'; ?>
+                <div style="max-width: 1000px; width: 100%; margin: 0 auto; min-height: 100%; height: 100%;">
+                    <div style="padding: 0 20px; overflow-y: auto; height: 100%;">

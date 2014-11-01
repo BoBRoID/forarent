@@ -71,7 +71,6 @@ class router extends db{
 
         $data = array();
 
-        $this->load('service/menu');
         $this->load('main');
         $this->buildPage($data);
 	}
