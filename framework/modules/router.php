@@ -70,8 +70,7 @@ class router extends db{
 		}
 
         $data = array();
-
-        $this->load('main');
+        $this->load('category');
         $this->buildPage($data);
 	}
 

@@ -1,4 +1,4 @@
-<div class="menu-bar" style="width: 60px; height: 100%; display: block; float: left;">
+<div class="menu-bar" style="width: 60px; height: 100%; display: block; float: left; margin-top: 6px;">
     <a href="#" id="trigger" class="menu-trigger" style="margin-left: 8px;"></a>
 </div>
 <nav id="mp-menu" class="mp-menu">
