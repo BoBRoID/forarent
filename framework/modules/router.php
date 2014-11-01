@@ -1,6 +1,31 @@
 <?php
 class router extends db{
 
+    private $pages = array();
+    private $backendPages = array();
+
+    function load($page, $position = array()){
+        if(file_exists('template/pages/frontend/'.$page.'.php')){
+            if($position['0'] == 'before' || $position['0'] == 'after'){
+                $t = array();
+
+                foreach($this->pages as $tPage){
+                    if($tPage == $position['1'] && $position['0'] == 'before'){
+                        $t = $page;
+                    }
+                    $t[] = $tPage;
+                    if($tPage == $position['1'] && $position['0'] == 'after'){
+                        $t = $page;
+                    }
+                }
+
+                $this->pages = $t;
+            }else{
+                $this->pages[] = $page;
+            }
+        }
+    }
+
 	function getURL(){
 		$link = explode('/', $_SERVER['REQUEST_URI']);
 		$lastIndex = (sizeof($link) - 1);
@@ -40,14 +65,24 @@ class router extends db{
 	function go(){
 		$link = $this->getURL();
 		if(!$this->existsPage($link)){
-			header("HTTP/1.1 301 Moved Permanently");
-			header("Location: http://".$_SERVER['SERVER_NAME']."/404.html");
+			header("HTTP/1.0 404 Not Found");
+            $this->load('404');
 		}
-		print_r($link);
+
+        $data = array();
+
+        $this->load('service/menu');
+        $this->buildPage($data);
 	}
 
 	function buildPage($data){
-
+        include 'template/pages/frontend/service/header.php';
+        if(sizeof($this->pages) >= 1){
+            foreach($this->pages as $a){
+                include 'template/pages/frontend/'.$a.'.php';
+            }
+        }
+        include 'template/pages/frontend/service/footer.php';
 	}
 
 }
