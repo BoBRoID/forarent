@@ -1,10 +1,13 @@
-<p><a href="#" id="trigger" class="menu-trigger"></a></p> <!-- открывает менюшку -->
+<div class="menu-bar" style="width: 60px; height: 100%; display: block; float: left; margin-top: 6px;">
+    <a href="#" id="trigger" class="menu-trigger" style="margin-left: 8px;"></a>
+</div> <!-- открывает менюшку -->
 <nav id="mp-menu" class="mp-menu">
     <div class="mp-level">
-        <h2 class="icon icon-world">All Categories</h2>
+        <h2 class="icon icon-world">forarent logo</h2>
         <ul>
+            <li><a href="#">Главная</a></li>
             <li class="icon icon-arrow-left">
-                <a class="icon icon-display" href="#">Devices</a>
+                <a class="icon icon-display" href="#">Категории</a>
                 <div class="mp-level">
                     <h2 class="icon icon-display">Devices</h2>
                     <a class="mp-back" href="#">back</a>
@@ -53,76 +56,17 @@
                 </div>
             </li>
             <li class="icon icon-arrow-left">
-                <a class="icon icon-news" href="#">Magazines</a>
+                <a class="icon icon-bulb" href="#">Фильтр</a>
                 <div class="mp-level">
-                    <h2 class="icon icon-news">Magazines</h2>
-                    <a class="mp-back" href="#">back</a>
-                    <ul>
-                        <li><a href="#">National Geographic</a></li>
-                        <li><a href="#">Scientific American</a></li>
-                        <li><a href="#">The Spectator</a></li>
-                        <li><a href="#">The Rambler</a></li>
-                        <li><a href="#">Physics World</a></li>
-                        <li><a href="#">The New Scientist</a></li>
-                    </ul>
+                    <h2>Фильтровать результаты</h2>
+                    <a class="mp-back" href="#">назад</a>
+                    <div class="filter">
+
+                    </div>
                 </div>
             </li>
-            <li class="icon icon-arrow-left">
-                <a class="icon icon-shop" href="#">Store</a>
-                <div class="mp-level">
-                    <h2 class="icon icon-shop">Store</h2>
-                    <a class="mp-back" href="#">back</a>
-                    <ul>
-                        <li class="icon icon-arrow-left">
-                            <a class="icon icon-t-shirt" href="#">Clothes</a>
-                            <div class="mp-level">
-                                <h2 class="icon icon-t-shirt">Clothes</h2>
-                                <a class="mp-back" href="#">back</a>
-                                <ul>
-                                    <li class="icon icon-arrow-left">
-                                        <a class="icon icon-female" href="#">Women's Clothing</a>
-                                        <div class="mp-level">
-                                            <h2 class="icon icon-female">Women's Clothing</h2>
-                                            <a class="mp-back" href="#">back</a>
-                                            <ul>
-                                                <li><a href="#">Tops</a></li>
-                                                <li><a href="#">Dresses</a></li>
-                                                <li><a href="#">Trousers</a></li>
-                                                <li><a href="#">Shoes</a></li>
-                                                <li><a href="#">Sale</a></li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li class="icon icon-arrow-left">
-                                        <a class="icon icon-male" href="#">Men's Clothing</a>
-                                        <div class="mp-level">
-                                            <h2 class="icon icon-male">Men's Clothing</h2>
-                                            <a class="mp-back" href="#">back</a>
-                                            <ul>
-                                                <li><a href="#">Shirts</a></li>
-                                                <li><a href="#">Trousers</a></li>
-                                                <li><a href="#">Shoes</a></li>
-                                                <li><a href="#">Sale</a></li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li>
-                            <a class="icon icon-diamond" href="#">Jewelry</a>
-                        </li>
-                        <li>
-                            <a class="icon icon-music" href="#">Music</a>
-                        </li>
-                        <li>
-                            <a class="icon icon-food" href="#">Grocery</a>
-                        </li>
-                    </ul>
-                </div>
-            </li>
-            <li><a class="icon icon-photo" href="#">Collections</a></li>
-            <li><a class="icon icon-wallet" href="#">Credits</a></li>
+            <li><a class="icon icon-user" href="#">Войти</a></li>
+            <li><a class="icon icon-truck" href="#">О сайте</a></li>
         </ul>
     </div>
 </nav>
